@@ -86,7 +86,7 @@ def signin():
             # Check the password is correct
             if user.check_password(form.password.data):
 		#Check if email is confirmed
-		if user.confirmation == True:
+		if user.confirmation:
 			login_user(user)			
                 	# Send back to the home page
 			flash('Succesfully signed in.', 'positive')
