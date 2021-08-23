@@ -29,3 +29,7 @@ RUN chmod 777 -R *
 
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+EXPOSE 8080
+
+CMD /usr/local/bin/gunicorn -w 2 -b :8000 app:app
