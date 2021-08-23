@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir -p /usr/src/app
 COPY requirements.txt /usr/src/app/
 RUN pip3 install --upgrade pip
-RUN pip3 install -r /usr/src/app/requirements.txt
+RUN pip install -r /usr/src/app/requirements.txt
 
 # Copy the files from the host to the container
 COPY . /usr/src/app
