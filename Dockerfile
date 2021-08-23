@@ -1,4 +1,4 @@
-FROM phusion/baseimage:master-amd64
+FROM python:3.6-alpine
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
@@ -30,6 +30,6 @@ RUN chmod 777 -R *
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-EXPOSE 8080
+EXPOSE 8000
 
 CMD /usr/local/bin/gunicorn -w 2 -b :8000 app:app
