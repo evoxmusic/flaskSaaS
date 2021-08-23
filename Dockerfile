@@ -1,4 +1,4 @@
-FROM python:3.6-alpine
+FROM phusion/baseimage:master-amd64
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
